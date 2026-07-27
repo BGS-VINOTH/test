@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Future Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    overflow-x:hidden;
+    background:#050816;
+    color:white;
+
+}
+
+/* Animated Background */
+
+body::before{
+
+content:'';
+position:fixed;
+left:-50%;
+top:-50%;
+width:200%;
+height:200%;
+
+background:
+
+radial-gradient(circle,#00ffff33 0%,transparent 25%),
+radial-gradient(circle,#ff00ff22 0%,transparent 30%),
+radial-gradient(circle,#0066ff22 0%,transparent 20%);
+
+animation:rotateBG 25s linear infinite;
+
+z-index:-2;
+
+}
+
+@keyframes rotateBG{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* Stars */
+
+.stars{
+
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+overflow:hidden;
+
+}
+
+.star{
+
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+animation:twinkle 4s infinite;
+
+}
+
+@keyframes twinkle{
+
+50%{
+
+opacity:.2;
+transform:scale(2);
+
+}
+
+}
+
+/* Navbar */
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:25px 10%;
+
+backdrop-filter:blur(20px);
+
+position:fixed;
+width:100%;
+top:0;
+
+background:rgba(255,255,255,.05);
+
+border-bottom:1px solid rgba(255,255,255,.1);
+
+z-index:999;
+
+}
+
+.logo{
+
+font-size:28px;
+font-weight:700;
+letter-spacing:2px;
+
+color:#00ffff;
+
+text-shadow:0 0 20px cyan;
+
+}
+
+nav ul{
+
+display:flex;
+list-style:none;
+gap:40px;
+
+}
+
+nav a{
+
+text-decoration:none;
+color:white;
+transition:.4s;
+
+}
+
+nav a:hover{
+
+color:#00ffff;
+
+}
+
+/* Hero */
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:0 10%;
+
+}
+
+.hero-content{
+
+max-width:700px;
+
+}
+
+.hero h1{
+
+font-size:70px;
+
+line-height:1.1;
+
+margin-bottom:20px;
+
+}
+
+.hero h1 span{
+
+color:#00ffff;
+
+text-shadow:0 0 20px cyan;
+
+}
+
+.hero p{
+
+font-size:20px;
+
+line-height:1.8;
+
+opacity:.8;
+
+margin-bottom:35px;
+
+}
+
+/* Buttons */
+
+.buttons{
+
+display:flex;
+gap:20px;
+
+}
+
+.btn{
+
+padding:16px 38px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:white;
+
+transition:.4s;
+
+font-weight:600;
+
+}
+
+.primary{
+
+background:linear-gradient(90deg,#00ffff,#0077ff);
+
+box-shadow:0 0 25px cyan;
+
+}
+
+.primary:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 0 60px cyan;
+
+}
+
+.secondary{
+
+border:2px solid cyan;
+
+}
+
+.secondary:hover{
+
+background:cyan;
+
+color:black;
+
+}
+
+/* Glass Card */
+
+.card{
+
+position:absolute;
+
+right:10%;
+
+width:350px;
+
+height:420px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.2);
+
+backdrop-filter:blur(20px);
+
+border-radius:25px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+box-shadow:0 0 40px rgba(0,255,255,.2);
+
+animation:float 5s ease-in-out infinite;
+
+}
+
+.card img{
+
+width:220px;
+
+border-radius:50%;
+
+border:5px solid cyan;
+
+box-shadow:0 0 30px cyan;
+
+}
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-25px);
+
+}
+
+}
+
+/* Footer */
+
+footer{
+
+text-align:center;
+
+padding:40px;
+
+opacity:.6;
+
+}
+
+/* Mobile */
+
+@media(max-width:1000px){
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.card{
+
+position:relative;
+
+right:auto;
+
+margin-top:50px;
+
+}
+
+.hero h1{
+
+font-size:48px;
+
+}
+
+nav ul{
+
+display:none;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<nav>
+
+<div class="logo">VINOTH</div>
+
+<ul>
+
+<li><a href="#">Home</a></li>
+<li><a href="#">Projects</a></li>
+<li><a href="#">Skills</a></li>
+<li><a href="#">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Hello, I'm <span>Vinoth</span></h1>
+
+<p>
+
+Full Stack Developer • AI Engineer • UI/UX Designer
+
+Creating immersive digital experiences with modern web technologies and futuristic design.
+
+</p>
+
+<div class="buttons">
+
+<a href="#" class="btn primary">View Projects</a>
+
+<a href="#" class="btn secondary">Contact Me</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://picsum.photos/300" alt="Profile">
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Vinoth Portfolio • Crafted with HTML & CSS
+
+</footer>
+
+<script>
+
+const stars=document.querySelector(".stars");
+
+for(let i=0;i<180;i++){
+
+let star=document.createElement("div");
+
+star.className="star";
+
+star.style.left=Math.random()*100+"%";
+star.style.top=Math.random()*100+"%";
+
+star.style.animationDelay=Math.random()*5+"s";
+
+star.style.opacity=Math.random();
+
+stars.appendChild(star);
+
+}
+
+</script>
+
+</body>
+</html>
