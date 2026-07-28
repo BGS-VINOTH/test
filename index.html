@@ -3,51 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Future Portfolio</title>
+<title>NeoVerse | Creative Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Outfit',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
 
-    overflow-x:hidden;
-    background:#050816;
-    color:white;
+background:#02040d;
+overflow-x:hidden;
+color:white;
 
 }
 
-/* Animated Background */
+/* Background */
 
 body::before{
 
-content:'';
+content:"";
+
 position:fixed;
-left:-50%;
-top:-50%;
-width:200%;
-height:200%;
+
+width:300%;
+height:300%;
+
+left:-100%;
+top:-100%;
 
 background:
 
-radial-gradient(circle,#00ffff33 0%,transparent 25%),
-radial-gradient(circle,#ff00ff22 0%,transparent 30%),
-radial-gradient(circle,#0066ff22 0%,transparent 20%);
+radial-gradient(circle,#4d7cff55 0%,transparent 25%),
+radial-gradient(circle,#8d3bff33 0%,transparent 35%),
+radial-gradient(circle,#00fff233 0%,transparent 20%);
 
-animation:rotateBG 25s linear infinite;
+animation:bg 30s linear infinite;
 
-z-index:-2;
+z-index:-5;
 
 }
 
-@keyframes rotateBG{
+@keyframes bg{
 
 100%{
 
@@ -57,26 +61,51 @@ transform:rotate(360deg);
 
 }
 
-/* Stars */
+/* Aurora */
 
-.stars{
+.aurora{
 
 position:fixed;
+
 width:100%;
 height:100%;
-z-index:-1;
-overflow:hidden;
+
+background:
+
+linear-gradient(120deg,#00fff222,#6b00ff22,#0099ff22,#00fff222);
+
+background-size:400% 400%;
+
+animation:aurora 15s ease infinite;
+
+filter:blur(90px);
+
+z-index:-4;
 
 }
 
+@keyframes aurora{
+
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+
+}
+
+/* Stars */
+
 .star{
 
-position:absolute;
+position:fixed;
+
 width:2px;
 height:2px;
+
 background:white;
+
 border-radius:50%;
-animation:twinkle 4s infinite;
+
+animation:twinkle 5s infinite;
 
 }
 
@@ -84,32 +113,42 @@ animation:twinkle 4s infinite;
 
 50%{
 
-opacity:.2;
-transform:scale(2);
+opacity:.1;
+
+transform:scale(3);
 
 }
 
 }
 
-/* Navbar */
+/* Navigation */
 
 nav{
 
+position:fixed;
+
+top:20px;
+left:50%;
+
+transform:translateX(-50%);
+
+width:90%;
+
+padding:18px 40px;
+
 display:flex;
+
 justify-content:space-between;
+
 align-items:center;
 
-padding:25px 10%;
+background:rgba(255,255,255,.04);
 
-backdrop-filter:blur(20px);
+backdrop-filter:blur(30px);
 
-position:fixed;
-width:100%;
-top:0;
+border:1px solid rgba(255,255,255,.08);
 
-background:rgba(255,255,255,.05);
-
-border-bottom:1px solid rgba(255,255,255,.1);
+border-radius:100px;
 
 z-index:999;
 
@@ -118,28 +157,38 @@ z-index:999;
 .logo{
 
 font-size:28px;
-font-weight:700;
+
+font-weight:900;
+
 letter-spacing:2px;
 
-color:#00ffff;
+background:linear-gradient(90deg,#00f0ff,#5f6fff,#ff00aa);
 
-text-shadow:0 0 20px cyan;
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
 
 }
 
 nav ul{
 
 display:flex;
+
 list-style:none;
-gap:40px;
+
+gap:35px;
 
 }
 
 nav a{
 
 text-decoration:none;
+
 color:white;
+
 transition:.4s;
+
+font-weight:300;
 
 }
 
@@ -161,142 +210,40 @@ justify-content:center;
 
 align-items:center;
 
-padding:0 10%;
+flex-direction:column;
+
+text-align:center;
+
+padding:40px;
+
+position:relative;
 
 }
 
-.hero-content{
+/* Floating Glass */
 
-max-width:700px;
-
-}
-
-.hero h1{
-
-font-size:70px;
-
-line-height:1.1;
-
-margin-bottom:20px;
-
-}
-
-.hero h1 span{
-
-color:#00ffff;
-
-text-shadow:0 0 20px cyan;
-
-}
-
-.hero p{
-
-font-size:20px;
-
-line-height:1.8;
-
-opacity:.8;
-
-margin-bottom:35px;
-
-}
-
-/* Buttons */
-
-.buttons{
-
-display:flex;
-gap:20px;
-
-}
-
-.btn{
-
-padding:16px 38px;
-
-border-radius:50px;
-
-text-decoration:none;
-
-color:white;
-
-transition:.4s;
-
-font-weight:600;
-
-}
-
-.primary{
-
-background:linear-gradient(90deg,#00ffff,#0077ff);
-
-box-shadow:0 0 25px cyan;
-
-}
-
-.primary:hover{
-
-transform:translateY(-5px);
-
-box-shadow:0 0 60px cyan;
-
-}
-
-.secondary{
-
-border:2px solid cyan;
-
-}
-
-.secondary:hover{
-
-background:cyan;
-
-color:black;
-
-}
-
-/* Glass Card */
-
-.card{
+.glass{
 
 position:absolute;
 
-right:10%;
-
-width:350px;
-
-height:420px;
-
-background:rgba(255,255,255,.05);
-
-border:1px solid rgba(255,255,255,.2);
-
-backdrop-filter:blur(20px);
-
-border-radius:25px;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-box-shadow:0 0 40px rgba(0,255,255,.2);
-
-animation:float 5s ease-in-out infinite;
-
-}
-
-.card img{
-
-width:220px;
+width:500px;
+height:500px;
 
 border-radius:50%;
 
-border:5px solid cyan;
+background:rgba(255,255,255,.05);
 
-box-shadow:0 0 30px cyan;
+backdrop-filter:blur(30px);
+
+border:1px solid rgba(255,255,255,.1);
+
+animation:float 8s ease-in-out infinite;
+
+box-shadow:
+
+0 0 80px rgba(0,255,255,.2),
+
+0 0 180px rgba(132,0,255,.2);
 
 }
 
@@ -304,49 +251,222 @@ box-shadow:0 0 30px cyan;
 
 50%{
 
-transform:translateY(-25px);
+transform:
+
+translateY(-30px)
+
+rotate(15deg);
 
 }
-
-}
-
-/* Footer */
-
-footer{
-
-text-align:center;
-
-padding:40px;
-
-opacity:.6;
-
-}
-
-/* Mobile */
-
-@media(max-width:1000px){
-
-.hero{
-
-flex-direction:column;
-
-text-align:center;
-
-}
-
-.card{
-
-position:relative;
-
-right:auto;
-
-margin-top:50px;
 
 }
 
 .hero h1{
 
-font-size:48px;
+font-size:95px;
+
+font-weight:900;
+
+position:relative;
+
+z-index:5;
+
+line-height:1;
+
+text-transform:uppercase;
+
+}
+
+.hero h1 span{
+
+background:
+
+linear-gradient(90deg,#00ffff,#5f6fff,#ff00ff);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.hero p{
+
+margin-top:30px;
+
+font-size:22px;
+
+max-width:700px;
+
+opacity:.75;
+
+position:relative;
+
+z-index:5;
+
+line-height:1.8;
+
+}
+
+/* Button */
+
+.btn{
+
+margin-top:45px;
+
+display:inline-block;
+
+padding:18px 45px;
+
+border-radius:60px;
+
+text-decoration:none;
+
+color:white;
+
+background:linear-gradient(90deg,#00ffff,#5f6fff);
+
+box-shadow:
+
+0 0 40px cyan;
+
+transition:.4s;
+
+position:relative;
+
+z-index:5;
+
+}
+
+.btn:hover{
+
+transform:translateY(-8px) scale(1.05);
+
+box-shadow:
+
+0 0 70px cyan,
+
+0 0 150px #5f6fff;
+
+}
+
+/* Floating Orbs */
+
+.orb{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(20px);
+
+animation:move 15s infinite alternate;
+
+}
+
+.orb:nth-child(1){
+
+width:180px;
+height:180px;
+
+background:#00ffff55;
+
+top:20%;
+
+left:8%;
+
+}
+
+.orb:nth-child(2){
+
+width:250px;
+height:250px;
+
+background:#6f00ff55;
+
+right:10%;
+
+bottom:20%;
+
+}
+
+.orb:nth-child(3){
+
+width:140px;
+height:140px;
+
+background:#ff009955;
+
+bottom:10%;
+
+left:25%;
+
+}
+
+@keyframes move{
+
+100%{
+
+transform:
+
+translateY(-80px)
+
+translateX(60px)
+
+scale(1.3);
+
+}
+
+}
+
+/* Scroll */
+
+.scroll{
+
+position:absolute;
+
+bottom:40px;
+
+font-size:14px;
+
+letter-spacing:6px;
+
+opacity:.5;
+
+animation:bounce 2s infinite;
+
+}
+
+@keyframes bounce{
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.hero h1{
+
+font-size:55px;
+
+}
+
+.glass{
+
+width:320px;
+
+height:320px;
+
+}
+
+.hero p{
+
+font-size:18px;
 
 }
 
@@ -364,17 +484,21 @@ display:none;
 
 <body>
 
-<div class="stars"></div>
+<div class="aurora"></div>
+
+<div class="orb"></div>
+<div class="orb"></div>
+<div class="orb"></div>
 
 <nav>
 
-<div class="logo">VINOTH</div>
+<div class="logo">NEOVERSE</div>
 
 <ul>
 
 <li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
 <li><a href="#">Projects</a></li>
-<li><a href="#">Skills</a></li>
 <li><a href="#">Contact</a></li>
 
 </ul>
@@ -383,62 +507,68 @@ display:none;
 
 <section class="hero">
 
-<div class="hero-content">
+<div class="glass"></div>
 
-<h1>Hello, I'm <span>Vinoth</span></h1>
+<h1>
+
+DESIGN<br>
+
+<span>THE FUTURE</span>
+
+</h1>
 
 <p>
 
-Full Stack Developer • AI Engineer • UI/UX Designer
+Not just websites.
 
-NANTHA UNGA APPAN DA NALA MUTHU PERAN DA.
+I craft immersive digital universes blending futuristic design,
+creative motion, elegant interfaces, and unforgettable experiences.
 
 </p>
 
-<div class="buttons">
+<a href="#" class="btn">
 
-<a href="#" class="btn primary">View Projects</a>
+ENTER MY WORLD
 
-<a href="#" class="btn secondary">Contact Me</a>
+</a>
 
-</div>
+<div class="scroll">
 
-</div>
-
-<div class="card">
-
-<img src="https://picsum.photos/300" alt="Profile">
+SCROLL ↓
 
 </div>
 
 </section>
 
-<footer>
-
-© 2026 Vinoth Portfolio • Crafted with HTML & CSS
-
-</footer>
-
 <script>
-
-const stars=document.querySelector(".stars");
 
 for(let i=0;i<180;i++){
 
-let star=document.createElement("div");
+let s=document.createElement("div");
 
-star.className="star";
+s.className="star";
 
-star.style.left=Math.random()*100+"%";
-star.style.top=Math.random()*100+"%";
+s.style.left=Math.random()*100+"vw";
 
-star.style.animationDelay=Math.random()*5+"s";
+s.style.top=Math.random()*100+"vh";
 
-star.style.opacity=Math.random();
+s.style.animationDelay=Math.random()*5+"s";
 
-stars.appendChild(star);
+s.style.opacity=Math.random();
+
+document.body.appendChild(s);
 
 }
+
+document.addEventListener("mousemove",(e)=>{
+
+let x=(e.clientX/window.innerWidth-.5)*30;
+
+let y=(e.clientY/window.innerHeight-.5)*30;
+
+document.querySelector(".glass").style.transform=`translate(${x}px,${y}px)`;
+
+});
 
 </script>
 
